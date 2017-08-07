@@ -190,7 +190,7 @@ describe('PATCH /todos/:id', () => {
       .expect((res) => {
         expect(res.body.todo.text).toBe(newBody.text),
         expect(res.body.todo.completed).toBe(false),
-        expect(res.body.todo.completedAt).toBe(null)
+        expect(res.body.todo.completedAt).toNotExist()
       })
       .end(done);
   });
